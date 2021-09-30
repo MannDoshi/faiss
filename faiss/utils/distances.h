@@ -34,6 +34,8 @@ float fvec_L1(const float* x, const float* y, size_t d);
 /// infinity distance
 float fvec_Linf(const float* x, const float* y, size_t d);
 
+float kendall_tau_distance(const float *va,const float *vb, size_t n);
+
 /** Compute pairwise distances between sets of vectors
  *
  * @param d     dimension of the vectors

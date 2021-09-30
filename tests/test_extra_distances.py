@@ -13,6 +13,7 @@ import unittest
 from common_faiss_tests import get_dataset_2
 
 import scipy.spatial.distance
+import scipy.stats
 
 
 class TestExtraDistances(unittest.TestCase):
@@ -82,6 +83,10 @@ class TestExtraDistances(unittest.TestCase):
         self.run_simple_dis_test(scipy.spatial.distance.jensenshannon,
                                  faiss.METRIC_JensenShannon)
 
+    def test_kendalltau(self):
+        self.run_simple_dis_test(scipy.stats.kendalltau,
+                                 faiss.METRIC_KendallTau)
+
 
 class TestKNN(unittest.TestCase):
     """ test that the knn search gives the same as distance matrix + argmin """
@@ -140,3 +145,8 @@ class TestHNSW(unittest.TestCase):
 
         for q in range(nq):
             assert np.all(D[q] == dis[q, I[q]])
+
+
+test = TestExtraDistances()
+test.test_L1()
+# test.test_kendalltau()

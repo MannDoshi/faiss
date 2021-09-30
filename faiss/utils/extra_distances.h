@@ -9,11 +9,12 @@
 
 /** In this file are the implementations of extra metrics beyond L2
  *  and inner product */
-
+#include <vector>
+#include<algorithm>
 #include <stdint.h>
 
 #include <faiss/Index.h>
-
+// #include <faiss/utils/kendall-tau.h>
 #include <faiss/utils/Heap.h>
 
 namespace faiss {

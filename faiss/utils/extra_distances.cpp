@@ -153,6 +153,7 @@ void pairwise_extra_distances(
         HANDLE_VAR(BrayCurtis);
         HANDLE_VAR(JensenShannon);
         HANDLE_VAR(Lp);
+        HANDLE_VAR(KendallTau);
 #undef HANDLE_VAR
         default:
             FAISS_THROW_MSG("metric type not implemented");
@@ -182,6 +183,7 @@ void knn_extra_metrics(
         HANDLE_VAR(BrayCurtis);
         HANDLE_VAR(JensenShannon);
         HANDLE_VAR(Lp);
+        HANDLE_VAR(KendallTau);
 #undef HANDLE_VAR
         default:
             FAISS_THROW_MSG("metric type not implemented");
@@ -208,6 +210,7 @@ DistanceComputer* get_extra_distance_computer(
         HANDLE_VAR(BrayCurtis);
         HANDLE_VAR(JensenShannon);
         HANDLE_VAR(Lp);
+        HANDLE_VAR(KendallTau);
 #undef HANDLE_VAR
         default:
             FAISS_THROW_MSG("metric type not implemented");

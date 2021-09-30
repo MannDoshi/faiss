@@ -191,6 +191,10 @@ TEST(TestGpuDistance, JensenShannon) {
     testTransposition(false, false, faiss::MetricType::METRIC_JensenShannon);
 }
 
+TEST(TestGpuDistance, JensenShannon) {
+    testTransposition(false, false, faiss::MetricType::METRIC_KendallTau);
+}
+
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);
 

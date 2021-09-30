@@ -10,6 +10,7 @@
 
 #include <faiss/utils/distances.h>
 #include <type_traits>
+#include <faiss/impl/FaissAssert.h>
 
 namespace faiss {
 
@@ -112,6 +113,14 @@ inline float VectorDistance<METRIC_JensenShannon>::operator()(
         accu += kl1 + kl2;
     }
     return 0.5 * accu;
+}
+
+template <>
+inline float VectorDistance<METRIC_KendallTau>::operator()(
+        const float* x,
+        const float* y) const{
+
+    return kendall_tau_distance(x, y, d);
 }
 
 } // namespace faiss
